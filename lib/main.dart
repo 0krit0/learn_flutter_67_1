@@ -11,7 +11,7 @@ void main() {
         home: Scaffold(
           appBar: AppBar(
             title: Text("My App"),
-            backgroundColor: Colors.blue ,
+            backgroundColor: const Color.fromARGB(255, 0, 37, 67) ,
             centerTitle: true,
           ),
           body: Home(),
@@ -25,6 +25,21 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("Hello Flutter! Step2");
+    //return Text("Hello Flutter! Step2");
+    return Center(
+      child: Container(
+        color: Colors.blue,
+        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: EdgeInsets.all(20),
+        child: Text(
+          "Hello Flutter! Step3",
+          style: TextStyle(
+            fontSize: 30,
+            color: const Color.fromARGB(255, 255, 255, 255),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
   }
 }
