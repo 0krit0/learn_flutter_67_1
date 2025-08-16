@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'package:learn_flutter_67_1/model/person.dart';
+
+import 'package:google_fonts/google_fonts.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -47,7 +51,10 @@ class _ItemState extends State<Item> {
               children: [
                 Text(
                   personList[index].name,
-                  style: const TextStyle(
+                  //style: const TextStyle(
+                    //color: Color.fromARGB(255, 255, 255, 255),
+                    //fontSize: 20,
+                  style: GoogleFonts.kanit(
                     color: Color.fromARGB(255, 255, 255, 255),
                     fontSize: 20,
                   ),
