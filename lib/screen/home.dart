@@ -5,21 +5,23 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //return Text("Hello Flutter! Step2");
-    return Center(
-      child: Container(
-        color: Colors.blue,
-        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        padding: EdgeInsets.all(20),
-        child: Text(
-          "Hello Flutter! Step4",
-          style: TextStyle(
-            fontSize: 30,
-            color: const Color.fromARGB(255, 255, 255, 255),
-            fontWeight: FontWeight.bold,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Container(
+          color: const Color.fromARGB(255, 255, 69, 2),
+          padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          child: const Text(
+            "Hello",
+            style: TextStyle(
+              fontSize: 20,
+              color: Color.fromARGB(255, 255, 254, 240),
+              fontWeight: FontWeight.bold,
+              letterSpacing: 3,
+            ),
           ),
         ),
-      ),
-    );
+      ],
+    ); // <<--- ตรงนี้ต้องมี ;
   }
 }
