@@ -40,7 +40,7 @@ class _ItemState extends State<Item> {
             padding: const EdgeInsets.all(40),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color: const Color.fromARGB(255, 255, 202, 193),
+              color: personList[index].jod.color,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,12 +59,21 @@ class _ItemState extends State<Item> {
                     fontSize: 20,
                   ),
                 ),
-                Text(
-                  personList[index].jod,
-                  style: const TextStyle(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    fontSize: 20,
-                  ),
+                Column(
+                  children: [
+                    Text(
+                      personList[index].jod.title,
+                      style: const TextStyle(
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 20,
+                      ),
+                    ),
+                    Image.asset(
+                      personList[index].jod.image,
+                      width: 50,
+                      height: 50,
+                    ),
+                  ],
                 ),
               ],
             ),
