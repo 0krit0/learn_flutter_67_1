@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter_67_1/model/person.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,8 +25,6 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  List data = ["สมชาย", "สมหญิง", "สมศรี", "สมปอง", "สมจิตร"];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +33,7 @@ class _ItemState extends State<Item> {
         centerTitle: true,
       ),
       body: ListView.builder(
-        itemCount: data.length,
+        itemCount: personList.length,
         itemBuilder: (context, index) {
           return Container(
             margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
@@ -43,12 +42,31 @@ class _ItemState extends State<Item> {
               borderRadius: BorderRadius.circular(30),
               color: const Color.fromARGB(255, 255, 202, 193),
             ),
-            child: Text(
-              data[index],
-              style: const TextStyle(
-                fontSize: 20,
-                color: Color.fromARGB(255, 71, 11, 0),
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  personList[index].name,
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    fontSize: 20,
+                  ),
+                ),
+                Text(
+                  "${personList[index].age} ปี",
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    fontSize: 20,
+                  ),
+                ),
+                Text(
+                  personList[index].jod,
+                  style: const TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    fontSize: 20,
+                  ),
+                ),
+              ],
             ),
           );
         },
@@ -56,3 +74,4 @@ class _ItemState extends State<Item> {
     );
   }
 }
+
