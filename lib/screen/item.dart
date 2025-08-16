@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Quantity Demo',
+      title: 'List Demo',
       home: const Item(),
     );
   }
@@ -24,53 +24,34 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  int quantity = 10;
-
-  void incrementQuantity() {
-    setState(() {
-      quantity++;
-    });
-  }
-
-  void decrementQuantity() {
-    setState(() {
-      quantity = quantity > 0 ? quantity - 1 : 0;
-    });
-  }
+  List data = ["สมชาย", "สมหญิง", "สมศรี", "สมปอง", "สมจิตร"];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Quantity Demo")),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              "Quantity: $quantity",
+      appBar: AppBar(
+        title: const Text('ListView Example'),
+        centerTitle: true,
+      ),
+      body: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (context, index) {
+          return Container(
+            margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+            padding: const EdgeInsets.all(40),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: const Color.fromARGB(255, 255, 202, 193),
+            ),
+            child: Text(
+              data[index],
               style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Color.fromARGB(255, 71, 11, 0),
               ),
             ),
-            const SizedBox(height: 20),
-            SizedBox(
-              width: 200,
-              child: ElevatedButton(
-                onPressed: incrementQuantity,
-                child: const Text("Increment"),
-              ),
-            ),
-            const SizedBox(height: 10),
-            SizedBox(
-              width: 200,
-              child: ElevatedButton(
-                onPressed: decrementQuantity,
-                child: const Text("Decrement"),
-              ),
-            ),
-          ],
-        ),
+          );
+        },
       ),
     );
   }
